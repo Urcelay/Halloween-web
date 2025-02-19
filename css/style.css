@@ -1,458 +1,530 @@
 @import url('https://fonts.googleapis.com/css2?family=Girassol&family=Jolly+Lodger&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Importa las fuentes desde Google Fonts: Girassol, Jolly Lodger y Montserrat */
+
 *{
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    scroll-padding-top: 3rem; 
-    font-family: var(--font-family-1)
-}
-:root {
-    --main-color: #ff7504;
-    --green-color: #a8ff52;
-    --text-color: #fff;
-    --text-color-alter: #1f003a;
-    --body-color: #1f043a;
-    /* Fonts */
-    --font-family-1: "Montserrat", serif;
-    --font-family-2: "Jolly Lodger", serif;
-    --font-family-3: "Girassol", serif;
-}
-body{  
-    color: var(--text-color);
-    background: var(--body-color);
-}
-a{
-    text-decoration: none;
-}
-img{
-    width:100%
-}
-section{
-    padding: 3rem 0 2rem;
-}
-.container{
-    max-width: 1060px;
-    width: 100%;
-    margin: auto;
-}
-header{
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    z-index:100;
-    transition: background 0.3 ease;
-}
-header.header-active{
-    background: var(--body-color);
-    transition: background 0.3 ease;
-}
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
+    padding: 0;  /* Elimina el relleno predeterminado de todos los elementos */
+    margin: 0;  /* Elimina los márgenes predeterminados de todos los elementos */
+    scroll-behavior: smooth;  /* Hace que el desplazamiento en la página sea suave */
+    box-sizing: border-box;  /* Asegura que el tamaño de los elementos incluya padding y border sin afectar el width/height */
+    scroll-padding-top: 3rem;  /* Agrega un espacio superior al hacer scroll para mejorar la visibilidad */
+    font-family: var(--font-family-1) /* Establece la fuente principal del sitio según la variable */
 }
 
-.logo{
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--text-color);
-    font-family: var(--font-family-2)
+:root {
+    --main-color: #ff7504;  /* Define el color principal en un tono naranja */
+    --green-color: #a8ff52;  /* Define un color verde para elementos destacados */
+    --text-color: #fff;  /* Define el color de texto principal en blanco */
+    --text-color-alter: #1f003a;  /* Define un color alternativo para el texto */
+    --body-color: #1f043a;  /* Define el color de fondo del cuerpo de la página */
+    
+    /* Fuentes */
+    --font-family-1: "Montserrat", serif;  /* Define la fuente principal */
+    --font-family-2: "Jolly Lodger", serif;  /* Define una fuente alternativa decorativa */
+    --font-family-3: "Girassol", serif;  /* Define otra fuente alternativa */
 }
-.navbar{
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
+
+body {  
+    color: var(--text-color);  /* Aplica el color de texto definido en blanco */
+    background: var(--body-color);  /* Aplica el color de fondo del cuerpo */
 }
-.nav-link{
-    color:var(--text-color);
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    font-family: var(--font-family-3);
-    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+a {
+    text-decoration: none;  /* Elimina el subrayado predeterminado de los enlaces */
 }
-.nav-link:hover{
-    color: var(--main-color);
-    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+img {
+    width: 100%;  /* Hace que todas las imágenes ocupen el 100% del ancho del contenedor padre */
 }
-.menu-icon{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 5px;
-    cursor: pointer;
-    z-index: 200;
-    transition: 0.3s;
+
+section {
+    padding: 3rem 0 2rem;  /* Agrega un relleno de 3rem arriba, 0 a los lados y 2rem abajo */
 }
-.menu-icon div{
-    display: block;
-    background: var(--text-color);
-    height: 2px;
-    width: 23px;
-    transition: 0.3s
+
+.container {
+    max-width: 1060px;  /* Limita el ancho máximo del contenedor a 1060 píxeles */
+    width: 100%;  /* Hace que el contenedor ocupe el 100% del ancho disponible */
+    margin: auto;  /* Centra el contenedor horizontalmente */
 }
-.move .line1{
-    transform: rotate(-45deg) translate(-5px, 5px);
+
+header {
+    position: fixed;  /* Fija la cabecera en la parte superior de la pantalla */
+    top: 0;  /* La coloca en la parte superior */
+    left: 0;  /* La alinea con el borde izquierdo */
+    width: 100%;  /* Ocupa el ancho completo de la pantalla */
+    z-index: 100;  /* Asegura que la cabecera esté sobre otros elementos */
+    transition: background 0.3s ease;  /* Agrega una transición suave al cambiar el fondo */
 }
-.move .line2{
-    opacity: 0;
+
+header.header-active {
+    background: var(--body-color);  /* Cambia el fondo de la cabecera cuando tiene la clase "header-active" */
+    transition: background 0.3s ease;  /* Mantiene la transición suave */
 }
-.move .line3{
-    transform: rotate(45deg) translate(-5px, -5px);
+
+.nav {
+    display: flex;  /* Usa flexbox para organizar los elementos horizontalmente */
+    justify-content: space-between;  /* Separa los elementos en los extremos del contenedor */
+    align-items: center;  /* Centra los elementos verticalmente */
+    padding: 25px 0;  /* Agrega un espacio de 25px arriba y abajo, 0 en los lados */
 }
-.home{
-    width: 100%;
-    min-height: 900px;
-    position: relative;
-    overflow: hidden;
+
+.logo {
+    font-size: 1.6rem;  /* Define el tamaño del texto del logo */
+    font-weight: 700;  /* Aplica negrita al texto */
+    letter-spacing: 1px;  /* Agrega espaciado entre letras */
+    color: var(--text-color);  /* Aplica el color de texto definido en la variable */
+    font-family: var(--font-family-2);  /* Usa la fuente definida en la variable */
 }
-.home-img{
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 15px);
-    height: calc(100% + 10px);
-    object-fit: cover;
-    object-position: bottom;
-    z-index: -1;
-    transform: scale(1.1);
-    animation: homeimg 4s linear infinite alternate;
+
+.navbar {
+    display: flex;  /* Usa flexbox para organizar los elementos horizontalmente */
+    align-items: center;  /* Centra los elementos verticalmente */
+    column-gap: 2rem;  /* Agrega un espacio de 2rem entre los elementos */
 }
-/* NO FUNCIONA*/
-@keyframes homeimg{
+
+.nav-link {
+    color: var(--text-color);  /* Aplica el color del texto */
+    font-size: 1.2rem;  /* Define el tamaño de la fuente */
+    letter-spacing: 1px;  /* Agrega espaciado entre letras */
+    font-family: var(--font-family-3);  /* Usa la fuente definida en la variable */
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);  /* Agrega una transición suave */
+}
+
+.nav-link:hover {
+    color: var(--main-color);  /* Cambia el color del texto al pasar el cursor sobre el enlace */
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);  /* Mantiene la misma transición */
+}
+
+.menu-icon {
+    display: none;  /* Oculta el icono del menú por defecto */
+    flex-direction: column;  /* Organiza los elementos en columna */
+    align-items: center;  /* Centra los elementos horizontalmente */
+    justify-content: center;  /* Centra los elementos verticalmente */
+    row-gap: 5px;  /* Agrega un espacio de 5px entre los elementos */
+    cursor: pointer;  /* Cambia el cursor a puntero para indicar que es interactivo */
+    z-index: 200;  /* Asegura que el icono esté por encima de otros elementos */
+    transition: 0.3s;  /* Agrega una transición suave */
+}
+
+.menu-icon div {
+    display: block;  /* Hace que cada línea del icono del menú sea un bloque visible */
+    background: var(--text-color);  /* Aplica el color de fondo definido en la variable */
+    height: 2px;  /* Establece la altura de cada línea */
+    width: 23px;  /* Establece el ancho de cada línea */
+    transition: 0.3s;  /* Agrega una transición suave */
+}
+
+.move .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);  /* Gira y desplaza la primera línea para formar una "X" */
+}
+
+.move .line2 {
+    opacity: 0;  /* Oculta la segunda línea para formar una "X" */
+}
+
+.move .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);  /* Gira y desplaza la tercera línea para formar una "X" */
+}
+
+.home {
+    width: 100%;  /* Hace que el contenedor de la sección ocupe todo el ancho */
+    min-height: 900px;  /* Establece una altura mínima de 900px */
+    position: relative;  /* Define la posición relativa para que los elementos internos puedan posicionarse */
+    overflow: hidden;  /* Oculta cualquier contenido que sobresalga del contenedor */
+}
+
+.home-img {
+    position: absolute;  /* Permite que la imagen se posicione libremente dentro del contenedor */
+    top: -5px;  /* Desplaza la imagen 5px hacia arriba */
+    left: -5px;  /* Desplaza la imagen 5px hacia la izquierda */
+    width: calc(100% + 15px);  /* Hace que la imagen sea un poco más ancha que el contenedor */
+    height: calc(100% + 10px);  /* Hace que la imagen sea un poco más alta que el contenedor */
+    object-fit: cover;  /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    object-position: bottom;  /* Ajusta la imagen para que se enfoque en la parte inferior */
+    z-index: -1;  /* Envía la imagen al fondo */
+    transform: scale(1.1);  /* Agranda la imagen ligeramente */
+    animation: homeimg 4s linear infinite alternate;  /* Aplica la animación definida en "homeimg" */
+}
+
+/* Animación para mover la imagen */
+@keyframes homeimg {
     0% {
-        transform: translate3d(-5px,5px,0);
+        transform: translate3d(-5px, 5px, 0) scale(1.1);  /* Inicia la animación moviendo la imagen ligeramente */
     }
     50% {
-        transform: translate3d(-5px,0px,0);
+        transform: translate3d(-5px, 0px, 0) scale(1.1);  /* Mueve la imagen un poco menos */
     }
     100% {
-        transform: translate3d(0px,5px,0);
+        transform: translate3d(0px, 5px, 0) scale(1.1);  /* Mueve la imagen en otra dirección */
     }
 }
 
-.home-layer1{
-   position: absolute;
-   top: 50px; 
-   left: 0;
-   max-width: 250px;
-   object-fit: cover;
-}
-.home-layer2{
-    position: absolute;
-    bottom: 10px;
-    left:0;
-    max-width: 200px;
-    object-fit: cover;
-}
-.home-content{
-    text-align: center;
-    padding-top:5rem !important;
-}
-.home-content span{
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--green-color);
-}
-.home-content h1{
-    font-size: 8.5rem;
-    font-family: var(--font-family-2);
-    color: var(--main-color);
-    text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff,-2px -2px 0 #fff, 2px,-2px 0 #fff;
-}
-.home-content p{
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-.btn{
-    background: var(--text-color-alter);
-    color: var(--text-color);
-    font-size: 0.84rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 7px 20px;
-    border-radius: 20px;
-    border: 2px solid var(--text-color);
-    transition: background 0.4s ease;
-}
-.btn:hover{
-    background: var(--text-color);
-    color: var(--text-color-alter);
-    transition:background 0..4s ease;
-}
-.heading
-{
-    font-size: 3.2rem;
-    letter-spacing: 2px;
-    font-family: var(--font-family-3);
-    color: var(--main-color);
-    text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, -1px -1px 0 #fff;
-    text-align: center;
-    margin-bottom:2rem;
-}
-.deal-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
-    gap: 1rem;
+.home-layer1 {
+    position: absolute;  /* Posiciona el elemento de forma absoluta dentro de su contenedor padre */
+    top: 50px;  /* Ubica el elemento 50px desde la parte superior */
+    left: 0;  /* Lo alinea a la izquierda */
+    max-width: 250px;  /* Limita el ancho máximo del elemento a 250px */
+    object-fit: cover;  /* Asegura que la imagen cubra su espacio sin deformarse */
+ }
+ 
+ .home-layer2 {
+     position: absolute;  /* Posiciona el elemento de forma absoluta dentro de su contenedor padre */
+     bottom: 10px;  /* Ubica el elemento 10px desde la parte inferior */
+     left: 0;  /* Lo alinea a la izquierda */
+     max-width: 200px;  /* Limita el ancho máximo del elemento a 200px */
+     object-fit: cover;  /* Asegura que la imagen cubra su espacio sin deformarse */
+ }
+ 
+ .home-content {
+     text-align: center;  /* Centra el texto horizontalmente */
+     padding-top: 5rem !important;  /* Agrega un espacio superior de 5rem y usa !important para forzar la prioridad */
+ }
+ 
+ .home-content span {
+     font-size: 1.4rem;  /* Define el tamaño del texto */
+     font-weight: 700;  /* Aplica negrita */
+     text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+     color: var(--green-color);  /* Usa el color verde definido en la variable */
+ }
+ 
+ .home-content h1 {
+     font-size: 8.5rem;  /* Define un tamaño grande para el encabezado */
+     font-family: var(--font-family-2);  /* Aplica la fuente definida en la variable */
+     color: var(--main-color);  /* Usa el color principal */
+     text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff;  
+     /* Agrega un borde blanco alrededor del texto */
+ }
+ 
+ .home-content p {
+     font-size: 2rem;  /* Define el tamaño del texto */
+     font-weight: 700;  /* Aplica negrita */
+     text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+     margin-bottom: 2rem;  /* Agrega un margen inferior de 2rem */
+ }
+ 
+ .btn {
+     background: var(--text-color-alter);  /* Aplica el color de fondo definido */
+     color: var(--text-color);  /* Aplica el color del texto */
+     font-size: 0.84rem;  /* Define el tamaño de la fuente */
+     font-weight: 700;  /* Aplica negrita */
+     text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+     padding: 7px 20px;  /* Agrega un relleno interno */
+     border-radius: 20px;  /* Hace que los bordes sean redondeados */
+     border: 2px solid var(--text-color);  /* Agrega un borde sólido del color del texto */
+     transition: background 0.4s ease;  /* Agrega una transición suave al cambiar el fondo */
+ }
+ 
+ .btn:hover {
+    background: var(--text-color);  /* Cambia el fondo al color del texto cuando se pasa el cursor */
+    color: var(--text-color-alter);  /* Cambia el color del texto al color alternativo */
+    transition: background 0.4s ease;  /* Agrega una transición suave */
 }
 
-.deal-box{
-    display:grid;
-    justify-items: center;
-    cursor: pointer;
+.heading {
+    font-size: 3.2rem;  /* Define el tamaño del texto */
+    letter-spacing: 2px;  /* Agrega espacio entre letras */
+    font-family: var(--font-family-3);  /* Aplica la fuente definida */
+    color: var(--main-color);  /* Usa el color principal */
+    text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff;  
+    /* Agrega un contorno blanco al texto */
+    text-align: center;  /* Centra el texto horizontalmente */
+    margin-bottom: 2rem;  /* Agrega un espacio inferior de 2rem */
 }
 
-.deal-box img{
-    width: 100%;
-    height: 240px;
-    object-fit: contain;
-    object-position: center;
-    margin-bottom: 1rem;
+.deal-content {
+    display: grid;  /* Usa CSS Grid para organizar los elementos */
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));  
+    /* Crea columnas ajustables con un ancho mínimo de 240px */
+    gap: 1rem;  /* Agrega un espacio de 1rem entre los elementos */
 }
 
-.deal-box h2{
-    font-size: 0.9rem;
-    color: var(--text-color);
+.deal-box {
+    display: grid;  /* Usa CSS Grid */
+    justify-items: center;  /* Centra los elementos horizontalmente dentro del grid */
+    cursor: pointer;  /* Cambia el cursor a puntero al pasar sobre los elementos */
 }
 
-.deal-box span{
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--main-color);
-    margin: 10px 0 14px;
+.deal-box img {
+    width: 100%;  /* Hace que la imagen ocupe el ancho completo del contenedor */
+    height: 240px;  /* Fija la altura de la imagen en 240px */
+    object-fit: contain;  /* Ajusta la imagen para que se mantenga completa sin recortarse */
+    object-position: center;  /* Centra la imagen dentro del contenedor */
+    margin-bottom: 1rem;  /* Agrega un margen inferior de 1rem */
 }
-.add-cart{
-    display: block;
-    color: var(--text-color);
-    font-size: 0.87rem;
-    border: 1px solid var(--text-color);
-    padding: 7px 20px;
-    border-radius: 20px;
-    transition: all 0.4s ease;
-    opacity: 0;
-    transform: translateY(-10px)
+
+.deal-box h2 {
+    font-size: 0.9rem;  /* Define el tamaño de la fuente */
+    color: var(--text-color);  /* Usa el color del texto definido en la variable */
 }
+
+.deal-box span {
+    font-size: 1.1rem;  /* Define el tamaño del texto */
+    font-weight: 700;  /* Aplica negrita */
+    color: var(--main-color);  /* Usa el color principal */
+    margin: 10px 0 14px;  /* Agrega márgenes: 10px arriba, 14px abajo, 0 a los lados */
+}
+
+.add-cart {
+    display: block;  /* Hace que el botón sea un bloque de nivel de bloque (se apila verticalmente) */
+    color: var(--text-color);  /* Aplica el color de texto definido en la variable */
+    font-size: 0.87rem;  /* Define el tamaño de la fuente */
+    border: 1px solid var(--text-color);  /* Aplica un borde del color de texto */
+    padding: 7px 20px;  /* Agrega un relleno de 7px arriba y abajo, 20px a los lados */
+    border-radius: 20px;  /* Hace que los bordes del botón sean redondeados */
+    transition: all 0.4s ease;  /* Aplica una transición suave en todas las propiedades */
+    opacity: 0;  /* Inicia con el botón invisible */
+    transform: translateY(-10px);  /* Mueve el botón 10px hacia arriba */
+}
+
 .deal-box:hover .add-cart,
 .sale-box:hover .add-cart {
-    opacity: 1;
-    transform: translateY(0px);
+    opacity: 1;  /* Hace visible el botón al pasar el mouse sobre el contenedor */
+    transform: translateY(0px);  /* Restaura la posición original del botón */
 }
-.add-cart:hover{
-    background: var(--text-color);
-    color: var(--main-color);
-    transition: all 0.4s ease;
+
+.add-cart:hover {
+    background: var(--text-color);  /* Cambia el fondo al color de texto al pasar el cursor */
+    color: var(--main-color);  /* Cambia el color del texto al color principal */
+    transition: all 0.4s ease;  /* Aplica una transición suave */
 }
-.offer{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+
+.offer {
+    display: grid;  /* Usa CSS Grid para organizar los elementos */
+    grid-template-columns: repeat(2, 1fr);  /* Crea dos columnas de tamaño igual */
+    gap: 1.5rem;  /* Agrega un espacio de 1.5rem entre los elementos */
 }
-.offer-box{
-    background: var(--main-color);
-    color:var(--text-color);
-    border-radius: 3rem;
-    padding: 40px;
-    position:relative;
+
+.offer-box {
+    background: var(--main-color);  /* Aplica el color de fondo principal */
+    color: var(--text-color);  /* Aplica el color de texto definido en la variable */
+    border-radius: 3rem;  /* Hace que los bordes sean redondeados con un radio de 3rem */
+    padding: 40px;  /* Agrega un relleno de 40px dentro del contenedor */
+    position: relative;  /* Hace que los elementos hijos puedan posicionarse de forma absoluta */
 }
-.offer-box img{
-    width: 100px;
-    margin-top: -50%;
+
+.offer-box img {
+    width: 100px;  /* Define un tamaño fijo de 100px para la imagen */
+    margin-top: -50%;  /* Mueve la imagen hacia arriba, fuera del contenedor */
 }
-.offer-box h2{
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-top: 1rem;
+
+.offer-box h2 {
+    font-size: 1.4rem;  /* Define el tamaño del texto del encabezado */
+    text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+    margin-top: 1rem;  /* Agrega un espacio superior de 1rem */
 }
-.offer-box p{
-    font-size: 0.94rem;
-    margin: 1rem 0 1.8rem;
+
+.offer-box p {
+    font-size: 0.94rem;  /* Define el tamaño del texto del párrafo */
+    margin: 1rem 0 1.8rem;  /* Agrega márgenes: 1rem arriba, 1.8rem abajo */
 }
-.offer-box::before{
-    content: '';
-    position:absolute;
-    top:0;
-    left:0;
-    right: 0;
-    bottom: 0;
-    border-radius: 3rem;
-    border: 3px solid #3f2655;
-    transform: rotate(-2.7deg);
-    z-index: -1;
+
+.offer-box::before {
+    content: '';  /* Inserta un pseudo-elemento vacío antes del contenido */
+    position: absolute;  /* Posiciona el pseudo-elemento de forma absoluta dentro del contenedor */
+    top: 0;  /* Lo posiciona en la parte superior */
+    left: 0;  /* Lo posiciona a la izquierda */
+    right: 0;  /* Lo posiciona a la derecha */
+    bottom: 0;  /* Lo posiciona en la parte inferior */
+    border-radius: 3rem;  /* Aplica bordes redondeados */
+    border: 3px solid #3f2655;  /* Aplica un borde de 3px con color personalizado */
+    transform: rotate(-2.7deg);  /* Rota ligeramente el pseudo-elemento */
+    z-index: -1;  /* Coloca el pseudo-elemento detrás del contenido principal */
 }
-.sale-box{
-    display:grid;
-    justify-items: center;
+
+.sale-box {
+    display: grid;  /* Usa CSS Grid para organizar los elementos */
+    justify-items: center;  /* Centra los elementos dentro del contenedor */
 }
-.sale-box img{
-    width: 100%;
-    height: 280px;
-    border-radius: 10;
-    object-fit:cover;
-    object-position: center;
-    margin-bottom: 1rem;
+
+.sale-box img {
+    width: 100%;  /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: 280px;  /* Fija la altura de la imagen en 280px */
+    border-radius: 10px;  /* Redondea las esquinas de la imagen con un radio de 10px */
+    object-fit: cover;  /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+    object-position: center;  /* Centra la imagen dentro del contenedor */
+    margin-bottom: 1rem;  /* Agrega un margen inferior de 1rem */
 }
-.sale-box h2{
-    font-size: 0.9rem;
-    color: var(--text-color);
+
+.sale-box h2 {
+    font-size: 0.9rem;  /* Define el tamaño de la fuente del encabezado */
+    color: var(--text-color);  /* Usa el color del texto definido en la variable */
 }
-.sale-box span{
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--main-color);
-    margin: 10px 0 14px;
+
+.sale-box span {
+    font-size: 1.1rem;  /* Define el tamaño de la fuente del span */
+    font-weight: 700;  /* Aplica negrita */
+    color: var(--main-color);  /* Usa el color principal */
+    margin: 10px 0 14px;  /* Agrega márgenes: 10px arriba, 14px abajo */
 }
+
 .swiper-button-next,
-.swiper-button-prev{
-    background-color: var(--main-color)!important;
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    color: var(--text-color);
-    box-shadow:0 4px 8px rgba(0,0,0,0.2);
-    top: 45% !important;
-    transform: translateY(-50%);
-    position: absolute;
+.swiper-button-prev {
+    background-color: var(--main-color) !important;  /* Aplica el color de fondo principal con prioridad */
+    width: 30px !important;  /* Establece el tamaño de las flechas de navegación */
+    height: 30px !important;  /* Establece la altura de las flechas */
+    border-radius: 50%;  /* Hace que las flechas sean redondas */
+    display: flex;  /* Usa Flexbox para centrar el contenido dentro de las flechas */
+    align-items: center;  /* Centra los elementos verticalmente */
+    justify-content: center;  /* Centra los elementos horizontalmente */
+    color: var(--text-color);  /* Aplica el color del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Agrega una sombra sutil */
+    top: 45% !important;  /* Posiciona las flechas a mitad de la altura del contenedor */
+    transform: translateY(-50%);  /* Ajusta la posición verticalmente */
+    position: absolute;  /* Posiciona las flechas de forma absoluta dentro del contenedor */
 }
+
 .swiper-button-next::after,
-.swiper-button-prev::after{
-    font-size: 14px !important;
-    font-weight: bold;
-    color: var(--text-color);
+.swiper-button-prev::after {
+    font-size: 14px !important;  /* Establece el tamaño de la fuente de los íconos dentro de las flechas */
+    font-weight: bold;  /* Aplica negrita a los íconos */
+    color: var(--text-color);  /* Cambia el color de los íconos al color de texto */
 }
-.ticket-content{
-    display:  grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
-    gap: 1.8rem;
+
+.ticket-content {
+    display: grid;  /* Usa CSS Grid para organizar los elementos */
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));  /* Crea columnas de tamaño variable */
+    gap: 1.8rem;  /* Agrega un espacio de 1.8rem entre los elementos */
 }
-.ticket-box{
-    background: #3f2655;
-    text-align: center;
-    padding: 60px 35px;
-    border-radius: 1rem;
+
+.ticket-box {
+    background: #3f2655;  /* Aplica un fondo de color morado oscuro */
+    text-align: center;  /* Centra el texto dentro del contenedor */
+    padding: 60px 35px;  /* Agrega relleno de 60px arriba y abajo, 35px a los lados */
+    border-radius: 1rem;  /* Redondea los bordes del contenedor */
 }
-.ticket-box h2{
-    font-size: 1.2remm;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    border-bottom: 3px dashed var(--text-color);
-    padding-bottom:15px;
+
+.ticket-box h2 {
+    font-size: 1.2rem;  /* Define el tamaño de la fuente del encabezado */
+    font-weight: 500;  /* Aplica un peso de fuente medio */
+    margin-bottom: 2rem;  /* Agrega un margen inferior de 2rem */
+    border-bottom: 3px dashed var(--text-color);  /* Agrega una línea de borde inferior punteada */
+    padding-bottom: 15px;  /* Agrega un relleno inferior de 15px */
 }
-.ticket-box span{
-    font-size: 2.8rem;
-    letter-spacing: 1px;
-    color: var(--main-color);
-    font-family: var(--font-family-2);
+
+.ticket-box span {
+    font-size: 2.8rem;  /* Establece un tamaño de fuente grande para el span */
+    letter-spacing: 1px;  /* Agrega espacio entre las letras */
+    color: var(--main-color);  /* Aplica el color principal al texto */
+    font-family: var(--font-family-2);  /* Aplica la fuente definida en la variable */
 }
-.t-info{
-    margin: 1.5rem 0 1.8rem;
+
+.t-info {
+    margin: 1.5rem 0 1.8rem;  /* Agrega márgenes de 1.5rem arriba, 1.8rem abajo */
 }
-.t-info p{
-    font-size: 0.88rem;
-    margin-top: 10px;
+
+.t-info p {
+    font-size: 0.88rem;  /* Establece el tamaño de la fuente para los párrafos dentro de .t-info */
+    margin-top: 10px;  /* Agrega un margen superior de 10px a los párrafos */
 }
-.subscribe{
-    max-width: 650px;
-    width: 90%;
-    margin:auto;
-    text-align:center;
-    position:relative;
+
+.subscribe {
+    max-width: 650px;  /* Define un ancho máximo de 650px para el contenedor */
+    width: 90%;  /* El ancho del contenedor es el 90% de su contenedor padre */
+    margin: auto;  /* Centra el contenedor horizontalmente */
+    text-align: center;  /* Centra el texto dentro del contenedor */
+    position: relative;  /* Establece un contexto de posicionamiento relativo para los elementos hijos */
 }
-.subscribe img{
-    width: 100px;
-    position: absolute;
-    left:0;
-    top:10px;
+
+.subscribe img {
+    width: 100px;  /* Establece el ancho de la imagen en 100px */
+    position: absolute;  /* Posiciona la imagen de forma absoluta dentro de su contenedor */
+    left: 0;  /* Coloca la imagen en el borde izquierdo del contenedor */
+    top: 10px;  /* Coloca la imagen 10px por debajo de la parte superior del contenedor */
 }
-.subscribe .heading{
-    margin-bottom:10px;
+
+.subscribe .heading {
+    margin-bottom: 10px;  /* Agrega un margen inferior de 10px a los encabezados dentro de .subscribe */
 }
-.subscribe p{
-    font-size: 0.9rem;
-    margin-bottom:1.5rem;
+
+.subscribe p {
+    font-size: 0.9rem;  /* Define el tamaño de la fuente para los párrafos dentro de .subscribe */
+    margin-bottom: 1.5rem;  /* Agrega un margen inferior de 1.5rem a los párrafos */
 }
-.email-box{
-    background:#3f2655;
-    max-width:500px;
-    margin:auto;
-    width:100%;
-    display:flex;
-    align-items:center;
-    gap: 10px;
-    padding: 2px 10px;
-    border-radius: 2rem;
+
+.email-box {
+    background: #3f2655;  /* Establece el color de fondo de la caja de correo */
+    max-width: 500px;  /* Define un ancho máximo de 500px */
+    margin: auto;  /* Centra la caja de correo */
+    width: 100%;  /* Hace que la caja ocupe el 100% de su contenedor padre */
+    display: flex;  /* Usa Flexbox para organizar los elementos dentro de .email-box */
+    align-items: center;  /* Centra los elementos verticalmente dentro de la caja */
+    gap: 10px;  /* Agrega un espacio de 10px entre los elementos dentro de .email-box */
+    padding: 2px 10px;  /* Agrega relleno de 2px arriba y abajo, 10px a los lados */
+    border-radius: 2rem;  /* Redondea los bordes de la caja */
 }
-#email{
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: var(--text-color);
-    padding: 15px;
+
+#email {
+    width: 100%;  /* Hace que el campo de correo ocupe todo el ancho del contenedor */
+    border: none;  /* Elimina el borde del campo de texto */
+    outline: none;  /* Elimina el contorno cuando el campo está enfocado */
+    background: transparent;  /* Hace el fondo transparente */
+    color: var(--text-color);  /* Aplica el color de texto definido en la variable */
+    padding: 15px;  /* Agrega relleno de 15px dentro del campo de texto */
 }
-.subscribe-btn{
-    border:none;
-    outline:none;
-    background: var(--main-color);
-    color: var(--text-color);
-    padding: 10px 15px;
-    border-radius: 1.8rem;
-    font-weight: 500;
-    cursor:pointer;
+
+.subscribe-btn {
+    border: none;  /* Elimina el borde del botón */
+    outline: none;  /* Elimina el contorno del botón */
+    background: var(--main-color);  /* Aplica el color principal de fondo al botón */
+    color: var(--text-color);  /* Aplica el color de texto definido en la variable */
+    padding: 10px 15px;  /* Agrega relleno de 10px arriba y abajo, 15px a los lados */
+    border-radius: 1.8rem;  /* Redondea los bordes del botón */
+    font-weight: 500;  /* Establece un peso de fuente de 500 */
+    cursor: pointer;  /* Cambia el cursor a un puntero cuando se pasa sobre el botón */
 }
-.subscribe-btn:hover{
-    background: var(--body-color);
-    transition: 0.3s ease;
+
+.subscribe-btn:hover {
+    background: var(--body-color);  /* Cambia el fondo del botón al color del cuerpo al hacer hover */
+    transition: 0.3s ease;  /* Aplica una transición suave de 0.3 segundos */
 }
-.footer{
-    display: grid;
-    grid-template-columns: repeat(3,240px);
-    justify-content: space-between;
-    gap:2rem;
-    padding: 2rem 0;
+
+.footer {
+    display: grid;  /* Usa CSS Grid para organizar los elementos dentro del pie de página */
+    grid-template-columns: repeat(3, 240px);  /* Crea tres columnas de 240px de ancho */
+    justify-content: space-between;  /* Espacia las columnas de manera uniforme */
+    gap: 2rem;  /* Agrega un espacio de 2rem entre las columnas */
+    padding: 2rem 0;  /* Agrega relleno de 2rem arriba y abajo */
 }
-.footer-box{
-    display:grid;
-    gap:10px;
+
+.footer-box {
+    display: grid;  /* Usa CSS Grid para organizar los elementos dentro de .footer-box */
+    gap: 10px;  /* Agrega un espacio de 10px entre los elementos dentro de .footer-box */
 }
+
 .footer-box a {
-    color:var(--text-color);
-    font-size: 0.94rem;
+    color: var(--text-color);  /* Establece el color de los enlaces como el color del texto */
+    font-size: 0.94rem;  /* Define el tamaño de la fuente de los enlaces */
 }
-.footer-box .logo{
-    font-size:2rem;
-    color: var(--main-color);
-    text-align: center;
+
+.footer-box .logo {
+    font-size: 2rem;  /* Establece el tamaño de la fuente para el logo */
+    color: var(--main-color);  /* Aplica el color principal al logo */
+    text-align: center;  /* Centra el texto del logo */
 }
-.social{
-    display:flex;
-    justify-content: center;
-    gap:10px;
+
+.social {
+    display: flex;  /* Usa Flexbox para organizar los íconos de redes sociales */
+    justify-content: center;  /* Centra los íconos horizontalmente */
+    gap: 10px;  /* Agrega un espacio de 10px entre los íconos */
 }
-.social .bx{
-    background: #3f2655;
-    font-size:18px;
-    padding:8px;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+
+.social .bx {
+    background: #3f2655;  /* Aplica un fondo de color morado oscuro a los íconos */
+    font-size: 18px;  /* Establece el tamaño de la fuente de los íconos */
+    padding: 8px;  /* Agrega relleno de 8px dentro de los íconos */
+    border-radius: 50%;  /* Redondea los bordes de los íconos para hacerlos circulares */
+    transition: background 0.3s ease;  /* Aplica una transición suave al fondo del ícono */
 }
-.social .bx:hover{
-    background: var(--main-color);
-    transition: background 0.3s ease;
+
+.social .bx:hover {
+    background: var(--main-color);  /* Cambia el fondo del ícono al color principal al hacer hover */
+    transition: background 0.3s ease;  /* Aplica una transición suave al fondo al hacer hover */
 }
-.footer-box p{
-    font-size: 0.9rem;
+
+.footer-box p {
+    font-size: 0.9rem;  /* Define el tamaño de la fuente para los párrafos dentro de .footer-box */
 }
-.copyright{
-    padding: 30px 0;
-    text-align:center;
+
+.copyright {
+    padding: 30px 0;  /* Agrega relleno de 30px arriba y abajo */
+    text-align: center;  /* Centra el texto del pie de página */
 }
