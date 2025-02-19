@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--contiene metadatos-->
+    <meta charset="UTF-8"> <!--para que acepte mas caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Website</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- link icono para la pestaña del navegador-->
+    <link rel="shortcut icon" href="images/fav-icon.png" type="image/x-icon" />
+    <!--box, para el icono-->
+    <link 
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" 
+      rel="stylesheet"/>
+    <!-- Link Swiper's CSS para crear carruseles de imagenes -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <!--cabecera -->
+    <header>
+      <!-- para crear un contenedor para la barra de navegacion-->  
+      <div class="nav container">
+        <!--Logo--> <!--para aplicar estilos al logo o imagen-->
+        <a href="#" class="logo">Halloween</a>
+        <!-- Agrupa secciones en la barra de navegación-->
+        <div class="navbar">
+          <a href="#" class="nav-link">Casa</a>
+          <a href="#deals" class="nav-link">Tendencia</a>
+          <a href="#selling" class="nav-link">Productos</a>
+          <a href="#ticket" class="nav-link">Entradas</a>
+        </div>
+        <!--menu hamburguesa-->
+        <div class="menu-icon">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </header>
+  </body>
+    <!--home-->
+    <section class="home" id="home">
+      <!--home Images-->
+      <img src="images/home.png" alt="" class="home-img" />
+      <img src="images/home-layer1.png" alt="" class="home-layer1" />
+      <img src="images/home-layer2.png" alt="" class="home-layer2" />
+      <!--home content--> 
+      <div class="home-content container">
+        <span>Oferta especial</span>
+        <h1>Venta de Halloween</h1>
+        <p>Hasta 60% de descuento</p>
+        <a href="#" class="btn">Compra ahora</a>
+      </div>  
+    </section> 
+    <!--Ofertas-->
+    <section class="deals" id="deals">
+      <!--heading-->
+      <h2 class="heading">Ofertas del día</h2>
+      <!--Deals content-->
+      <div class="deal-content container">
+        <div class="deal-box">
+          <img src="images/deal-1.png" alt="">
+          <h2>Gárgola colgante</h2>
+          <span>$120.00</span>
+          <a href="#" class="add-cart">Añadir al carrito</a>
+        </div>
+        <div class="deal-box">
+          <img src="images/deal-2.png" alt="">
+          <h2>Calabaza</h2>
+          <span>$120.00</span>
+          <a href="#" class="add-cart">Añadir al carrito</a>
+        </div>
+        <div class="deal-box">
+          <img src="images/deal-3.png" alt="">
+          <h2>Kit de araña</h2>
+          <span>$120.00</span>
+          <a href="#" class="add-cart">Añadir al carrito</a>
+        </div>
+        <div class="deal-box">
+          <img src="images/deal-4.png" alt="">
+          <h2>Pequeño amigo</h2>
+          <span>$120.00</span>
+          <a href="#" class="add-cart">Añadir al carrito</a>
+        </div>
+      </div>
+    </section>
+    <!--Oferta-->
+    <section class="offer container" id="offer">
+      <div class="offer-box">
+        <img src="images/offer-1.png" alt="">
+        <h2>Vale de envío gratuito</h2>
+        <p>Cuando realizas una compra
+           en el sitio web del minorista, 
+           por lo general, tendrás la opción de 
+           ingresar un código promocional o un código de 
+           cupón durante el proceso de pago
+        </p>
+        <a href="#" class="btn">Comprar ahora</a>
+      </div>
+      <div class="offer-box">
+        <img src="images/offer-2.png" alt="">
+        <h2>15% de descuento en tu primer pedido</h2>
+        <p>Algunos minoristas pueden requerir un monto mínimo de compra 
+          para calificar para el descuento de $15. 
+          Por ejemplo, el cliente puede necesitar gastar $50 
+          o más para recibir los $15 de descuento.
+        </p>
+        <a href="#" class="btn">Comprar ahora</a>
+      </div>
+    </section>
+    <!--Selling-->
+    <section class="selling container" id="selling">
+      <!--Heading-->
+      <h2 class="heading">Best Selling</h2>  
+      <!--Selling content-->
+      <div class="swiper selling-content">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="sale-box">
+              <img src="images/selling-1.png" alt="">
+              <h2>Drácula</h2>
+              <span>$120.00</span>
+              <a href="#" class="add-cart">Añadir al carrito</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sale-box">
+              <img src="images/selling-2.png" alt="">
+              <h2>Haunted House</h2>
+              <span>$120.00</span>
+              <a href="#" class="add-cart">Añadir al carrito</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sale-box">
+              <img src="images/selling-3.png" alt="">
+              <h2>Bat Skeleton</h2>
+              <span>$120.00</span>
+              <a href="#" class="add-cart">Añadir al carrito</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sale-box">
+              <img src="images/selling-4.png" alt="">
+              <h2>Pumkin Bucket</h2>
+              <span>$120.00</span>
+              <a href="#" class="add-cart">Añadir al carrito</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sale-box">
+              <img src="images/selling-5.png" alt="">
+              <h2>Plush Toy</h2>
+              <span>$120.00</span>
+              <a href="#" class="add-cart">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <!--Entradas-->
+    <section class="entradas" id="entradas">
+      <!--Heading-->
+      <h2 class="heading">Obtén tus entradas</h2>
+      <!--Ticket Content-->
+      <div class="ticket-content container">
+        <div class="ticket-box">
+          <h2>Single Entry</h2>
+          <span>$69.00</span>
+          <div class="t-info">
+            <p>Single Entry</p>
+            <p>Only one person</p>
+            <p>2 hours limitation</p>
+          </div>
+          <a href="#" class="btn">Get Ticket</a>
+        </div>
+        <div class="ticket-box">
+          <h2>Couple Entry</h2>
+          <span>$89.00</span>
+          <div class="t-info">
+            <p>Couple Entry</p>
+            <p>Only one person</p>
+            <p>2 hours limitation</p>
+          </div>
+          <a href="#" class="btn">Get Ticket</a>
+        </div>
+        <div class="ticket-box">
+          <h2>Combine Entry</h2>
+          <span>$99.00</span>
+          <div class="t-info">
+            <p>Entrada combinada</p>
+            <p>Solo una persona</p>
+            <p>Limitación de 2 horas</p>
+          </div>
+          <a href="#" class="btn">Obtén las entradas</a>
+        </div>
+      </div>
+    </section>
+    <!--Subscribe-->
+    <section class="subscribe">
+    <img src="images/subscribe.png" alt="">
+    <h2 class="heading">Únete a la fiesta</h2>
+    <p>Regístrese para recibir consejos, nuevos productos y ofertas especiales de party city</p>
+    <form action="" class="email-box">
+      <input type="email" name="" id="email" placeholder="Enter your email">
+      <input type="submit" value="Subscribe" class="subscribe-btn">
+    </form>
+    </section>
+    <!--Footer-->
+    <div class="footer container">
+      <div class="footer-box">
+        <a href="#">Casa</a>
+        <a href="#">Productos</a>
+        <a href="#">Tendencia</a>
+      </div>
+      <div class="footer-box">
+        <a href="#" class="logo">Halloween</a> 
+        <div class="social">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-box">
+        <p>2548 Broaddus Maple Court Avenue, USA</p>
+        <p>1234567890</p>
+        <p>demo@yourstore.com</p>
+      </div>
+    </div>
+    <p class="copyright">&#169; Halloween</p>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--ScrollReveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--Link para JS-->
+    <script src ="js/main.js"></script>
+  </body>
+</html>
